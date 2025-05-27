@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popup Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      z-index: 999;
+    }
+
+    .popup img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="showPopup()">Click me</button>
+
+  <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+  <div class="popup" id="popup">
+    <img src="https://i.imgur.com/0rVeh4K.png" alt="Raccoon" />
+    <p>what if may iba na sya</p>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function hidePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
